@@ -68,7 +68,8 @@ border: 1px solid;
   .menu-item{
     margin-bottom: 20px;
     background: #F6F2D4;
-    padding: 10px;
+    padding: 30px;
+    height: 70vh;
   }
   .menu-item h4 {
     font-weight: bold;
