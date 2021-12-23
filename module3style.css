@@ -1,31 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Moon+Dance&family=Satisfy&display=swap');
+
 body {
    font-size: 16px;
-   font-family: 'Exo 2' sans-serif;
-   background-color: beige;
+   font-family: 'Satisfy', cursive;
+   background-color: #95D1CC;
 }
 .navbar-header button.navbar-toggle .navbar-header .icon-bar{
     border: 2px solid #000;
 }
 #header-nav {
-    background-color: #999999;
+   background-color: #5584AC;
     border: 2px solid #000;
     border-radius: 0;
 }
 .navbar-brand {
     margin-top: 10px;
     padding-top: 10px;
+
 }
 .navbar-nav {
     margin: 0 -15px;
 }
 .navbar-brand h1 {
-    color:#000;
+    
     font-size: 1.5em;
     font-weight: bold;
     margin-top: 0;
     margin-bottom: 0;
     line-height: .75;
     margin-left: 15px;
+    color: #fff;
 }
 .navbar-brand a:hover, .navbar-brand a:focus {
     text-decoration: none;
@@ -57,20 +61,22 @@ border: 1px solid;
     margin-top:40px;
   }
   .menu-title{
-    font-weight: bold;
+    font-size: 1.5em;
+    font-weight: bolder;
     margin-left: -30px;
   }
   .menu-item{
     margin-bottom: 20px;
-    background:#999999;  
+    background: #F6F2D4;
     padding: 10px;
   }
   .menu-item h4 {
     font-weight: bold;
   }
   .menu-item p{
+    font-family: 'Moon Dance', cursive;
     font-weight:600;
-    font-size: .9em;
+    font-size: 1.3em;
     padding: 5px 10px;
   }
   @media (max-width:767px){
@@ -92,3 +98,13 @@ border: 1px solid;
         margin-left: 60px ;
     }
   }
+
+.navbar-toggle:hover {
+  background-color: #5584AC;
+}
+
+.icon-bar { 
+  background-color: #fff !important; 
+}
+
+
