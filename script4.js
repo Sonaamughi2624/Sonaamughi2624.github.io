@@ -84,6 +84,98 @@ $ajaxUtils.sendGetRequest(
   },
   false);
 });
+  
+  // Builds HTML for the home page based on categories array
+93	
+// returned from the server.
+94	
+function buildAndShowHomeHTML (categories) {
+95	
+  
+96	
+  // Load home snippet page
+97	
+  $ajaxUtils.sendGetRequest(
+98	
+    homeHtmlUrl,
+99	
+    function (homeHtml) {
+100	
+101	
+      // TODO: STEP 2: Here, call chooseRandomCategory, passing it retrieved 'categories'
+102	
+      // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
+103	
+      // variable's name implies it expects.
+104	
+      
+105	
+      var chosenCategoryShortName = chooseRandomCategory(categories).short_name;      
+106	
+107	
+      // TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet with the
+108	
+      // chosen category from STEP 2. Use existing insertProperty function for that purpose.
+109	
+      // Look through this code for an example of how to do use the insertProperty function.
+110	
+      // WARNING! You are inserting something that will have to result in a valid Javascript
+111	
+      // syntax because the substitution of {{randomCategoryShortName}} becomes an argument
+112	
+      // being passed into the $dc.loadMenuItems function. Think about what that argument needs
+113	
+      // to look like. For example, a valid call would look something like this:
+114	
+      // $dc.loadMenuItems('L')
+115	
+      // Hint: you need to surround the chosen category short name with something before inserting
+116	
+      // it into the home html snippet.
+117	
+      //
+118	
+119	
+      chosenCategoryShortName = "'" + chosenCategoryShortName + "'";
+120	
+      var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", chosenCategoryShortName);
+121	
+      
+122	
+123	
+      // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
+124	
+      // Use the existing insertHtml function for that purpose. Look through this code for an example
+125	
+      // of how to do that.
+126	
+      // ....
+127	
+128	
+      insertHtml("#main-content", homeHtmlToInsertIntoMainPage);      
+129	
+    },
+130	
+    false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
+131	
+}
+132	
+133	
+134	
+// Given array of category objects, returns a random category object.
+135	
+function chooseRandomCategory (categories) {
+136	
+  // Choose a random index into the array (from 0 inclusively until array length (exclusively))
+137	
+  var randomArrayIndex = Math.floor(Math.random() * categories.length);
+138	
+139	
+  // return category object with that randomArrayIndex
+140	
+  return categories[randomArrayIndex];
+141	
+}
 
 // Load the menu categories view
 dc.loadMenuCategories = function () {
